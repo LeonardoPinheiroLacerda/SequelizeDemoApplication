@@ -1,4 +1,4 @@
-#SEQUELIZE DEMO APPLICATION
+# SEQUELIZE DEMO APPLICATION
 
 Aplicação para pratica de orm com sequelize
 

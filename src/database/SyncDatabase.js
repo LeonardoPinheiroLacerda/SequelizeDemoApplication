@@ -8,6 +8,7 @@ const TeamPeople = require('./models/TeamPerson');
 const Project = require('./models/Project');
 
 const Task = require('./models/Task');
+const Backlog = require('./models/Backlog');
 
 class SyncDatabase {
     static async sync(force, alter, logging) {
@@ -22,6 +23,7 @@ class SyncDatabase {
         await Project.sync({force, alter, logging});
 
         await Task.sync({force, alter, logging});
+        await Backlog.sync({force, alter, logging});
 
     }
 }
