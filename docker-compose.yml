@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    container_name: sequelize_demo
+    image: postgres:14.2
+    environment:
+      PGUSER: "sequelize" #Variável pré-definir o usuário da ferramenta psql.
+      POSTGRES_USER: "sequelize"
+      POSTGRES_PASSWORD: "sequelize@passwd"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data 
