@@ -32,7 +32,7 @@ Team.belongsToMany(User, {
         name: 'teamId',
         field: 'team_id',
         allowNull: false
-    }
+    },
 });
 
 User.belongsToMany(Team, {
@@ -41,7 +41,7 @@ User.belongsToMany(Team, {
         name: 'userId',
         field: 'user_id',
         allowNull: false
-    }
+    },
 });
 
 

@@ -17,21 +17,31 @@ const main = async () => {
         password: 'leon'
     });
 
-    await Team.create({
+    const team1 = await Team.create({
         name: 'Main Team',
         leaderId: user.id
     });
 
-    await Team.create({
+    const team2 = await Team.create({
         name: 'Secondary Team',
         leaderId: user.id
     });
 
-    user = await User.findByPk(user.id);
-    console.log(user);
+    await user.addTeam(team1);
+    await user.addTeam(team2);
 
-    const teams = await user.getTeams({raw: true, where: {name: 'Main Team'}});
-    console.log(teams);
+    await user.removeTeam(team2);
+
+    user = await User.findByPk(user.id);
+
+    const teams = await user.getTeams({ raw: true });
+    //console.log(teams);
+
+    //console.log(await team1.getLeader({ raw: true }));
+
+    const leaderedTeam = await user.getLeaderedTeam({ raw: true });
+
+    //console.log(leaderedTeam);
 
 };
 

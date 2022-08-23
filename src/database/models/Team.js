@@ -32,11 +32,13 @@ Team.belongsTo(User, {
         name: 'leaderId',
         field: 'leader_id',
         allowNull: false
-    }
+    },
+    as: 'leader'
 });
 
 User.hasMany(Team, {
-    foreignKey: 'leaderId'
+    foreignKey: 'leaderId',
+    as: 'leaderedTeam'
 });
 
 module.exports = Team;
