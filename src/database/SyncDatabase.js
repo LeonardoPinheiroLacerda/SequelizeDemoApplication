@@ -11,6 +11,8 @@ const Task = require('./models/Task');
 const Backlog = require('./models/Backlog');
 const BacklogNotification = require('./models/BacklogNotification');
 
+const Attachment = require('./models/Attachment');
+
 class SyncDatabase {
     static async sync(force, alter, logging) {
 
@@ -26,6 +28,8 @@ class SyncDatabase {
         await Task.sync({force, alter, logging});
         await Backlog.sync({force, alter, logging});
         await BacklogNotification.sync({force, alter, logging});
+
+        await Attachment.sync({force, alter, logging});
 
     }
 }
