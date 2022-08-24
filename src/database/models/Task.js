@@ -52,7 +52,8 @@ Task.init(
         },
         classificationId: {
             type: DataTypes.INTEGER,
-            field: 'classification_id'
+            field: 'classification_id',
+            allowNull: false
         },
         projectId: {
             type: DataTypes.INTEGER,
