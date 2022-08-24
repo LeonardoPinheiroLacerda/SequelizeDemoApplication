@@ -1,15 +1,17 @@
 const Sequelize = require('sequelize');
 
+require('dotenv').config();
+
 class Database {
     static getConnection() {
         return new Sequelize(
-            'sequelize',        //database
-            'sequelize',        //user
-            'sequelize@passwd',  //password
+            process.env.DATABASE_SCHEMA,
+            process.env.DATABASE_USER,
+            process.env.DATABASE_PASSWORD,
             {
-                host: 'localhost',
-                dialect: 'postgres',
-                timezone: '-03:00'
+                host:       process.env.DATABASE_HOST,
+                dialect:    process.env.DATABASE_DIALECT,
+                timezone:   process.env.DATABASE_TIMEZONE
             }
         );
     }
