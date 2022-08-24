@@ -12,6 +12,7 @@ const Backlog = require('./models/Backlog');
 const BacklogNotification = require('./models/BacklogNotification');
 
 const Attachment = require('./models/Attachment');
+const DetailedHour = require('./models/DetailedHour');
 
 class SyncDatabase {
     static async sync(force, alter, logging) {
@@ -31,6 +32,7 @@ class SyncDatabase {
 
         await Attachment.sync({force, alter, logging});
 
+        await DetailedHour.sync({force, alter, logging});
     }
 }
 
