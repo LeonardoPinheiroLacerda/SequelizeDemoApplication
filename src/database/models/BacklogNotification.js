@@ -37,19 +37,11 @@ BacklogNotification.init(
 );
 
 BacklogNotification.belongsTo(Backlog, {
-    foreignKey: {
-        name: 'backlogId',
-        field: 'backlog_id',
-        allowNull: false
-    }
+    foreignKey:'backlogId'
 });
 
 BacklogNotification.belongsTo(User, {
-    foreignKey: {
-        name: 'userId',
-        field: 'user_id',
-        allowNull: false
-    },
+    foreignKey: 'userId',
     as: 'notifiedUser'
 });
 

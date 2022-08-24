@@ -37,19 +37,11 @@ Backlog.init(
 );
 
 Backlog.belongsTo(User, {
-    foreignKey: {
-        name: 'userId',
-        field: 'user_id',
-        allowNull: false
-    }
+    foreignKey: 'userId'
 });
 
 Backlog.belongsTo(Task, {
-    foreignKey: {
-        name: 'taskId',
-        field: 'task_id',
-        allowNull: false
-    }
+    foreignKey: 'taskId'
 });
 
 User.hasMany(Backlog, {

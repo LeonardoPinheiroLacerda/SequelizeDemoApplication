@@ -39,11 +39,7 @@ Attachment.init(
 );
 
 Attachment.belongsTo(Task, {
-    foreignKey: {
-        name: 'taskId',
-        field: 'task_id',
-        allowNull: false
-    }
+    foreignKey: 'taskId'
 });
 
 Task.hasMany(Attachment, {

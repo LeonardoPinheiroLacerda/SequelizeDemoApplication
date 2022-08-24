@@ -41,19 +41,11 @@ DetailedHour.init(
 );
 
 DetailedHour.belongsTo(Task, {
-    foreignKey: {
-        name: 'taskId',
-        field: 'task_id',
-        allowNull: false
-    }
+    foreignKey: 'taskId'
 });
 
 DetailedHour.belongsTo(User, {
-    foreignKey: {
-        name: 'userId',
-        field: 'user_id',
-        allowNull: false
-    }
+    foreignKey: 'userId'
 });
 
 Task.hasMany(DetailedHour, {

@@ -17,6 +17,11 @@ Team.init(
             allowNull: false,
             unique: true
         },
+        leaderId: {
+            type: DataTypes.INTEGER,
+            field: 'leader_id',
+            allowNull: false
+        }
     },
     {
         sequelize: Database.getConnection(),
@@ -28,11 +33,7 @@ Team.init(
 
 
 Team.belongsTo(User, {
-    foreignKey: {
-        name: 'leaderId',
-        field: 'leader_id',
-        allowNull: false
-    },
+    foreignKey: 'leaderId',
     as: 'leader'
 });
 

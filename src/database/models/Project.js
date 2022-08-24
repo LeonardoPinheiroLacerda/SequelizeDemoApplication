@@ -17,7 +17,17 @@ Project.init(
             type: DataTypes.STRING(50),
             allowNull: false,
             unique: true
-        }
+        },
+        teamId: {
+            type: DataTypes.INTEGER,
+            field: 'team_id',
+            allowNull: false
+        },
+        clientId: {
+            type: DataTypes.INTEGER,
+            field: 'client_id',
+            allowNull: false
+        },
     },
     {
         sequelize: Database.getConnection(),
@@ -28,18 +38,10 @@ Project.init(
 );
 
 Project.belongsTo(Team, {
-    foreignKey: {
-        name: 'teamId',
-        field: 'team_id',
-        allowNull: false
-    }
+    foreignKey: 'teamId'
 });
 Project.belongsTo(Client, {
-    foreignKey: {
-        name: 'clientId',
-        field: 'client_id',
-        allowNull: false
-    }
+    foreignKey: 'clientId'
 });
 
 Client.hasMany(Project, {

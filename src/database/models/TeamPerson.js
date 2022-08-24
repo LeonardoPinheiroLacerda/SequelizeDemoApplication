@@ -28,20 +28,12 @@ TeamPeople.init(
 
 Team.belongsToMany(User, {
     through: TeamPeople,
-    foreignKey: {
-        name: 'teamId',
-        field: 'team_id',
-        allowNull: false
-    },
+    foreignKey: 'teamId'
 });
 
 User.belongsToMany(Team, {
     through: TeamPeople,
-    foreignKey: {
-        name: 'userId',
-        field: 'user_id',
-        allowNull: false
-    },
+    foreignKey: 'userId'
 });
 
 

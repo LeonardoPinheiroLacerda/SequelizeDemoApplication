@@ -68,19 +68,11 @@ Task.init(
 );
 
 Task.belongsTo(Project, {
-    foreignKey: {
-        name: 'projectId',
-        field: 'project_id',
-        allowNull: true
-    }
+    foreignKey: 'projectId'
 });
 
 Task.belongsTo(Classification, {
-    foreignKey: {
-        name: 'classificationId',
-        field: 'classification_id',
-        allowNull: false
-    }
+    foreignKey: 'classificationId'
 });
 
 Project.hasMany(Task, {

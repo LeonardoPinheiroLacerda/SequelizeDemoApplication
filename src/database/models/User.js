@@ -13,18 +13,15 @@ User.init(
         name: {
             type: DataTypes.STRING(50),
             allowNull: false,
-            unique: false
         },
         lastName: {
             type: DataTypes.STRING(50),
             field: 'last_name',
             allowNull: false,
-            unique: false
         },
         email: {
             type: DataTypes.STRING(100),
             allowNull: false,
-            unique: false
         },
         telephoneNumber: {
             type: DataTypes.STRING(25),
@@ -40,7 +37,6 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: false,
         }
     },
     {
